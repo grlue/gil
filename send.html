@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Send GIL · grlue</title>
+  <link rel="icon" type="image/png" href="assets/logo/gil-back-32.png">
+  <link rel="stylesheet" href="home.css">
+  <style>
+    .send { max-width: 520px; padding-block: 24px 64px; }
+    .send h1 { font-size: clamp(40px, 9vw, 64px); margin-bottom: 18px; }
+    .send p { color: var(--ink-2); }
+    .send .eng-form { max-width: none; }
+  </style>
+  <script src="send.js" defer></script>
+</head>
+<body>
+  <header class="nav wrap"><a class="wordmark" href="./">grlue</a></header>
+  <main class="send wrap">
+    <h1>Send GIL</h1>
+    <p>Send GIL, and SOL if you want, from your wallet in one approval. Open this page in your wallet app's browser.</p>
+    <div class="eng-form">
+      <label for="to">To (Solana address)</label>
+      <input id="to" type="text" autocomplete="off" spellcheck="false">
+      <label for="gil">GIL</label>
+      <input id="gil" type="number" min="0" step="1" value="0" inputmode="numeric">
+      <label for="sol">SOL <span>optional</span></label>
+      <input id="sol" type="number" min="0" step="0.001" value="0" inputmode="decimal">
+      <button id="ring-go" type="button">Connect wallet</button>
+      <p class="eng-status" id="status" role="status" aria-live="polite"></p>
+    </div>
+  </main>
+</body>
+</html>
