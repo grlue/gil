@@ -64,7 +64,7 @@
       const t = document.createElement('span'); t.className = 'r-text'; t.textContent = e.text;
       const a = document.createElement('span'); a.className = 'r-amt'; a.textContent = `${e.amount.toLocaleString('en-US')} GIL`;
       const m = document.createElement('a'); m.className = 'r-meta'; m.href = `https://solscan.io/tx/${e.sig}`; m.target = '_blank'; m.rel = 'noopener';
-      m.textContent = `${short(e.owner || '')} · ${e.time ? new Date(e.time * 1000).toISOString().slice(0, 10) : ''}`;
+      m.textContent = `${short(e.owner || '')} · ${e.time ? new Date(e.time * 1000).toLocaleDateString('en-CA') : ''}`;
       li.append(t, a, m);
       ol.append(li);
     });
