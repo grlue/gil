@@ -15,6 +15,7 @@
   <link rel="icon" type="image/png" href="assets/logo/gil-back-32.png">
   <link rel="stylesheet" href="home.css">
   <script src="gil.js" defer></script>
+  <script src="rings.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -23,6 +24,7 @@
     <nav aria-label="Sections">
       <a href="#token">Token</a>
       <a href="#vesting">Vesting</a>
+      <a href="#engrave">Engrave</a>
       <a href="#market">Market</a>
     </nav>
   </header>
@@ -62,7 +64,7 @@
       <div class="col" id="token">
         <h2>Token details</h2>
         <dl>
-          <div><dt>Supply</dt><dd>100,000,000 GIL, fixed</dd></div>
+          <div><dt>Supply</dt><dd>100,000,000 GIL at issue, no minting<span class="supply-now" id="supply-now"></span></dd></div>
           <div><dt>Network</dt><dd>Solana</dd></div>
           <div><dt>Authority</dt><dd>Mint &amp; freeze authority revoked</dd></div>
           <div><dt>Metadata</dt><dd>Name, symbol and logo immutable</dd></div>
@@ -77,6 +79,27 @@
           <div><dt>Contributors</dt><dd>15% · 3 years after a 1-year cliff</dd></div>
         </dl>
         <a class="ext" href="https://lock.jup.ag/token/DN355ibWteCMRihi3bnaEGn2dXTZf6yKhr3zAC8aE9LZ" target="_blank" rel="noopener">View the vaults on Jupiter Lock<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5h6.5V10M12.5 3.5 4 12"/></svg></a>
+      </div>
+    </section>
+
+    <section class="engrave wrap" id="engrave" aria-labelledby="engrave-title">
+      <div class="eng-copy">
+        <h2 id="engrave-title">Engrave a ring</h2>
+        <p>Burn GIL to carve your words into the rings. Burned GIL is gone for good, so the supply shrinks. The three largest burns turn on the rings above.</p>
+        <div class="eng-form">
+          <label for="ring-text">Words <span id="ring-count">0/24</span></label>
+          <input id="ring-text" type="text" maxlength="24" autocomplete="off" placeholder="Your name or a short line">
+          <label for="ring-amount">GIL to burn <span>min 100</span></label>
+          <input id="ring-amount" type="number" min="100" step="1" value="100" inputmode="numeric">
+          <button id="ring-go" type="button">Connect wallet</button>
+          <p class="eng-status" id="ring-status" role="status" aria-live="polite">Open this page in your Solana wallet's browser to engrave.</p>
+        </div>
+        <p class="eng-fine">Engraving is permanent on Solana. Words that attack or deceive others are not shown on this page.</p>
+      </div>
+      <div class="eng-list">
+        <h3>Engraved <span class="eng-total">· <span id="ring-burned">0</span> GIL burned</span></h3>
+        <p class="eng-empty" id="ring-empty">No rings yet. The first engraving takes the first ring.</p>
+        <ol id="ring-list"></ol>
       </div>
     </section>
 

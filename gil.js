@@ -87,6 +87,14 @@
       a += span;
     });
     for (let k = 0; k < 3; k++) el('circle', { class: 'ripple', r: 214 }).style.setProperty('--i', k);
+    // Engraved rings (rings.js): the three largest burns are carved on rings outside the vault ring.
+    const eg = el('g', { class: 'spin engraved' });
+    (window.__gilEngraved || []).slice(0, 3).forEach((e, k) => {
+      const r = 342 + k * 30, id = `eng-${k}`;
+      el('path', { id, d: `M0 ${-r}A${r} ${r} 0 1 1 0 ${r}A${r} ${r} 0 1 1 0 ${-r}`, fill: 'none' }, eg);
+      const tp = el('textPath', { href: `#${id}`, startOffset: `${k * 21}%` }, el('text', { class: 'eng-text' }, eg));
+      tp.textContent = `${e.text}  ·  ${e.amount.toLocaleString('en-US')} GIL`;
+    });
   };
 
   const fmt = (base) => Number(base / 1000000000n).toLocaleString('en-US');
@@ -97,9 +105,10 @@
 
   let s = state();
   draw(s);
+  window.gilRedraw = () => draw(s);
 
   // Slow turning of the three ring layers (SVG attribute, so the centre is always the coin).
-  const SPEEDS = [360 / 32, -360 / 46, 360 / 64];
+  const SPEEDS = [360 / 32, -360 / 46, 360 / 64, -360 / 120];
   if (svg && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const start = performance.now();
     const spin = (t) => {

@@ -11,6 +11,7 @@ Public token metadata for grlue Gil, the currency of the grlue world.
 
 - `gil.png` — token icon
 - `gil.json` — token metadata (name, symbol, description, image)
-- `index.html`, `home.css`, `gil.js`, `assets/` — the website
+- `index.html`, `home.css`, `gil.js`, `rings.js`, `assets/`, `vendor/` — the website (`vendor/` holds @solana/web3.js 1.99.0, MIT)
+- `rings-hidden.json` — engraved rings hidden from the website (by transaction signature)
 
 Files are referenced by commit-pinned URLs, so published versions do not change.
