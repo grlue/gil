@@ -195,7 +195,7 @@ dd { color: var(--ink); font-variant-numeric: tabular-nums; }
 .ext.strong { font-size: 18px; font-weight: 500; }
 .addr.small { margin-top: 0; }
 .addr.small code { font-size: 14px; color: var(--ink-2); }
-.notice { max-width: 34ch; font-size: 14.5px; color: var(--muted); text-align: right; }
+.notice { max-width: 46ch; font-size: 14.5px; color: var(--muted); text-align: right; }
 
 /* Footer */
 .foot { display: flex; flex-wrap: wrap; gap: 8px 28px; padding-block: 28px 40px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
